@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="com.javaex.vo.PersonVo" %>    
-<%
-	PersonVo vo = (PersonVo)request.getAttribute("pVo");
-%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +14,10 @@
 	</p>
 	
 	<form action="/phonebook2/pbc" method="get">
-		이름(name): <input type="text" name="name" value="<%=vo.getName()%>" > <br>
-		핸드폰(hp): <input type="text" name="hp" value="<%=vo.getHp()%>" > <br>
-		회사(company): <input type="text" name="company" value="<%=vo.getCompany()%>" > <br>
-		코드(id): <input type="text" name="id" value="<%=vo.getPersonId()%>" readonly > <br>
+		이름(name): <input type="text" name="name" value="${pVo.name}" > <br>
+		핸드폰(hp): <input type="text" name="hp" value="${pVo.hp}" > <br>
+		회사(company): <input type="text" name="company" value="${pVo.company}" > <br>
+		코드(id): <input type="text" name="id" value="${pVo.personId}" readonly > <br>
 		<input type="text" name="action" value="update">
 		<button type = submit> 수정 </button> <br><br>
 	</form>
